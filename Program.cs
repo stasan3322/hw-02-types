@@ -1,80 +1,66 @@
-﻿Console.WriteLine("Введите значение: ");
-var someproperty = Console.ReadLine();
-if (string.IsNullOrEmpty(someproperty) ||
-    string.IsNullOrWhiteSpace(someproperty))
+﻿Console.WriteLine("Введите номер месяца");
+string value = Console.ReadLine();
+int.TryParse(value, out int x);
+if(x!=0)
 {
-    Console.WriteLine("Неверное значение");
-    Environment.Exit(1);
+    switch (x) 
+    {
+        case 1:
+            Console.WriteLine("Январь 31 день");
+            break;
+        case 2:
+            Console.WriteLine("Ферваль 28 дней");
+            break;
+        case 3:
+            Console.WriteLine("Март 31 день");
+            break;
+        case 4:
+            Console.WriteLine("Апрель 30 дней");
+            break;
+        case 5:
+            Console.WriteLine("Май 31 день");
+            break;
+        case 6:
+            Console.WriteLine("Июнь 30 дней");
+            break;
+        case 7:
+            Console.WriteLine("Июль 31 день");
+            break;
+        case 8:
+            Console.WriteLine("Август 31 дней");
+            break;
+        case 9:
+            Console.WriteLine("Сентябрь 30 дней");
+            break;
+        case 10:
+            Console.WriteLine("Октябрь 31 день");
+            break;
+        case 11:
+            Console.WriteLine("Ноябрь 30 дней");
+            break;
+        case 12:
+            Console.WriteLine("Декабрь 31 дней");
+            break;
+    }
+    if (x == 12 || x >= 1 && x <= 2)
+    {
+        Console.WriteLine("Сезон года-зима");
+    }
+    else if (x >= 3 && x <= 5)
+    {
+        Console.WriteLine("Сезон года-весна");
+    }
+    else if (x >= 6 && x <= 8) 
+    {
+        Console.WriteLine("Сезон года-лето");
+    }
+    else if (x >= 9 && x <= 11)
+    {
+        Console.WriteLine("Сезон года-осень");
+    }
+    else
+    {
+        Console.WriteLine("Некорректные данные");
+    }
 }
 
-if (int.TryParse(someproperty, out int x))
-{
-    Console.WriteLine("int x ={0}", x);
-}
-else
-{
-    Console.WriteLine($"Для приведения числа {someproperty} к типу int число не может быть больше {int.MaxValue} и меньше{int.MinValue}");
-}
-
-if (long.TryParse(someproperty, out long y))
-{
-    Console.WriteLine("long y={0}", y);
-}
-else
-{
-    Console.WriteLine($"Для приведение числа {someproperty} к типу long число не может быть больше {long.MaxValue} и меньше  {long.MinValue}" );
-}
-
-if (sbyte.TryParse(someproperty, out sbyte z))
-{
-    Console.WriteLine("sbyte z={0}", z);
-}
-else
-{
-    Console.WriteLine($"Для приведение числа {someproperty} к типу sbyte число не может быть больше {sbyte.MaxValue} и меньше  {sbyte.MinValue}");
-}
-
-if (short.TryParse(someproperty, out short a))
-{
-    Console.WriteLine("short a={0}", a);
-}
-else
-{
-    Console.WriteLine($"Для приведение числа {someproperty} к типу short число не может быть больше {short.MaxValue} и меньше  {short.MinValue}");
-}
-if (byte.TryParse(someproperty, out byte b))
-{
-    Console.WriteLine("byte b={0}", b);
-}
-else
-{
-    Console.WriteLine($"Для приведение числа {someproperty} к типу byte число не может быть больше {byte.MaxValue} и меньше  {byte.MinValue}");
-}
-if (ushort.TryParse(someproperty, out ushort c))
-{
-    Console.WriteLine("ushort c={0}", c);
-}
-else
-{
-    Console.WriteLine($"Для приведение числа {someproperty} к типу ushort число не может быть больше {ushort.MaxValue} и меньше  {ushort.MinValue}");
-}
-if (uint.TryParse(someproperty, out uint d))
-{
-    Console.WriteLine("uint d={0}", d);
-}
-else
-{
-    Console.WriteLine($"Для приведение числа {someproperty} к типу uint число не может быть больше {uint.MaxValue} и меньше  {uint.MinValue}");
-}
-if (ulong.TryParse(someproperty, out ulong e))
-{
-    Console.WriteLine("ulong e={0}", e);
-}
-else
-{
-    Console.WriteLine($"Для приведение числа {someproperty} к типу ulong число не может быть больше {ulong.MaxValue} и меньше  {ulong.MinValue}");
-}
-
-
-    
-    
